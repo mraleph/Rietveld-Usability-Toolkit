@@ -121,6 +121,7 @@
     "lib/syntax/themes/shThemeRDark.css",
     "lib/syntax/brush/shBrushAppleScript.js",
     "lib/syntax/brush/shBrushCSharp.js",
+    "lib/syntax/brush/shBrushDart.js",
     "lib/syntax/brush/shBrushGroovy.js",
     "lib/syntax/brush/shBrushGyp.js",
     "lib/syntax/brush/shBrushPhp.js",

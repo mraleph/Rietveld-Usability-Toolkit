@@ -42,6 +42,13 @@ var brushes = [
       ],
   },
   {
+    name: "Dart",
+    path: "lib/syntax/brush/shBrushDart.js",
+    extensions: [
+        "dart"
+      ],
+  },
+  {
     name: "Delphi",
     path: "lib/syntax/brush/shBrushDelphi.js",
     extensions: [],
