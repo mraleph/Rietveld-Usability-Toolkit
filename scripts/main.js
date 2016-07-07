@@ -1,10 +1,16 @@
 // TODO: We should use programmatic injection so that
 // this script is only injected on correct pages.
-if (!domInspector) {
-  throw new Error('Halt execution, no domInspector.');
-} else if (!domInspector.isPatch()) {
-  throw new Error('Halt execution, not a Patch.')
-} else console.log('Found patch page... injecting.');
+(function injectForPatch() {
+  if (domInspector && domInspector.isDiff()) {
+    injectScriptFile(document, chrome.extension.getURL('scripts/inject/diff.js'));
+    return;
+  }
+
+  if (!domInspector || !domInspector.isPatch()) {
+    return;
+  }
+
+  console.log('Found patch page... injecting.');
 
 injectScriptFile(document, chrome.extension.getURL('scripts/inject/patch.js'));
 
@@ -579,3 +585,4 @@ function selectPrevInColumn(ev) {
 
 document.addEventListener('rb-selectNextInColumn', selectNextInColumn);
 document.addEventListener('rb-selectPrevInColumn', selectPrevInColumn);
+})();

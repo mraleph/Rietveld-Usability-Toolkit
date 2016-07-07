@@ -105,6 +105,7 @@ function applyMatchesToText(matches, text, offset) {
 function applyMatchesToHtml(matches, node, offset) {
   var contents = node.childNodes;
   var res = node.cloneNode(false);
+  var _offset = offset || 0;
   var offset = offset || 0;
   for (var i = 0; i < contents.length; i++) {
     var el = contents[i];
@@ -117,7 +118,7 @@ function applyMatchesToHtml(matches, node, offset) {
     res.appendChild(inner[0]);
     offset += inner[1];
   }
-  return [res, offset];
+  return [res, offset - _offset];
 }
 
 function applyMatchesForRow(row) {
@@ -260,8 +261,8 @@ if (brush) {
     });
 }
 // TODO: Sometimes we get an error when initializing highlighting in an inline frame... why?
-setTimeout(function() { if (!highlightInitialized) initializeHighlighting(); }, 200);
-setTimeout(function() { if (!highlightInitialized) initializeHighlighting(); }, 400);
+// setTimeout(function() { if (!highlightInitialized) initializeHighlighting(); }, 200);
+// setTimeout(function() { if (!highlightInitialized) initializeHighlighting(); }, 400);
 
 
 

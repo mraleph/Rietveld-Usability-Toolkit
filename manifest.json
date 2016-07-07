@@ -115,6 +115,7 @@
   "web_accessible_resources" : [
     "scripts/inject/inline_frame.js",
     "scripts/inject/patch.js",
+    "scripts/inject/diff.js",
     "scripts/lib.js",
     "lib/syntax/themes/shThemeDefault.css",
     "lib/syntax/themes/shThemeDjango.css",

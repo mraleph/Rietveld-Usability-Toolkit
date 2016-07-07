@@ -58,7 +58,10 @@ function splitCell(self, cellClasses, codeClass) {
     var line = parseInt(row.attr('id').substring(7));
     var filename = domInspector.filePathFromDiffUrl(window.location.href);
     var baseurl = domInspector.baseUrlOnDiffPage();
-    var cs_link = getCodesearchUrl(window.location.hostname, baseurl, filename, line);
+    var cs_link;
+    try {
+      cs_link = getCodesearchUrl(window.location.hostname, baseurl, filename, line);
+    } catch (e) { }
     if (cs_link) {
       lineAnchor.href = cs_link;
       lineAnchor.classList.add('rb-lineNumberCsLinkEnabled');
