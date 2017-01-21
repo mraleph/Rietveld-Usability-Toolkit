@@ -45,7 +45,7 @@ var manifest = {
     },
     "codeFont": {
       "type": "string",
-      "default": "Inconsolata",
+      "default": "Source Code Pro",
       "description": "Font for code lines."
     },
     "codeFontEnabled": {
@@ -111,7 +111,7 @@ var manifest = {
     "codeFontSize": {
       "type": "dropdown",
       "default": "12px",
-      "description": "Font for code lines.",
+      "description": "Font size for code lines.",
       "values": [
         " 8px",
         " 9px",

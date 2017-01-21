@@ -49,6 +49,28 @@ function addDropdown(container, name, setting) {
   container.append(div);
 }
 
+
+function addInput(container, name, setting) {
+  var div = $('<div class="rb-setting"/>');
+  var input = $('<input type="text" name="' + name + '" class="rb-dropdown"/>');
+
+  function update() {
+    chrome.storage.sync.get(name, (items) => input.val(items[name]))
+  }
+  update();
+  chrome.storage.onChanged.addListener(update, name);
+
+  input.change(function () {
+    var change = {};
+    change[name] = $(this).val();
+    chrome.storage.sync.set(change);
+  });
+
+  div.append(input).append($('<span/>').html(setting.description));
+  container.append(div);
+}
+
+
 function insertControls(div) {
   var settings = manifest.settings;
   $.each(settings, function (name) {
@@ -58,6 +80,9 @@ function insertControls(div) {
     }
     if (setting.type == 'dropdown') {
       addDropdown(div, name, setting);
+    }
+    if (setting.type == 'string') {
+      addInput(div, name, setting);
     }
   });
 }
