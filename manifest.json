@@ -70,6 +70,14 @@
     },
     {
       "matches": [
+        "*://dart-review.googlesource.com/*"
+      ],
+      "css": [
+        "css/gerrit-style.css"
+      ]
+    },
+    {
+      "matches": [
         "*://chromiumcodereview.appspot.com/*/diff*",
         "*://breakpad.appspot.com/*/diff*",
         "*://codereview.appspot.com/*/diff*",

@@ -1,0 +1,16 @@
+.gr-diff {
+  font-family: 'Operator Mono' !important;
+  font-weight: 300 !important;
+  font-size: 12pt !important;
+  font-feature-settings: 'liga' 1 !important;
+}
+
+.gr-syntax-keyword, .gr-syntax-comment {
+  font-style: italic !important;
+}
+
+.gr-linked-text {
+  font-family: 'Operator Mono' !important;
+  font-weight: 300 !important;
+  font-size: 12pt !important;
+}
